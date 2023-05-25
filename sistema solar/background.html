@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema Solar</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="solar-system">
+      <div id="sun">
+        <img src="sol23-unscreen.gif" alt="Sun" class="sun-gif" />
+      </div>
+
+      <div id="mercury" class="planet">
+        <img src="mercury.png" alt="1" />
+      </div>
+
+      <div id="venus" class="planet">
+        <img src="venus.png" alt="2" />
+      </div>
+
+      <div id="earth" class="planet">
+        <img src="planetaterra.gif" alt="3" />
+      </div>
+
+      <div id="mars" class="planet">
+        <img src="marte.png" alt="4" />
+      </div>
+
+      <!-- Adicione as estrelas com a classe "star" -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <!-- ... adicione mais estrelas se desejar -->
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+      function createStars() {
+        const numStars = 100;
+        const container = document.body;
+
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.style.top = `${getRandomNumber(0, 100)}vh`;
+          star.style.left = `${getRandomNumber(0, 100)}vw`;
+          container.appendChild(star);
+        }
+      }
+
+      function getRandomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      createStars();
+      <!--SALVE TH -->
+    </script>
+  </body>
+</html>
